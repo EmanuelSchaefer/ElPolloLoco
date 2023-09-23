@@ -341,7 +341,7 @@ p {
 }
 
 @media screen and (min-height: 840px) {
-    @media screen and (min-width: 1200px) {
+    @media screen and (min-width: 870px) {
         .mobileBTNs {
             display: none;
         }
