@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en" translate="no">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="img/info-img/chicken.svg" type="image/x-icon">
+  <link rel="stylesheet" href="style.css">
+  <title>EL POLLO LOCO</title>
+</head>
+<style>
+  @font-face {
+    font-family: 'west';
+    src: url('fonts/west.TTF') format('truetype');
+  }
+</style>
+
+<body onload="init()">
+  <div class="colum">
+    <h2 id="h2">El Pollo Loco</h2>
+
+    <div class="spaceAround">
+
+      <!--sounds-->
+      <div class="allBTNS" id="allBTNS">
+        <button class="buttons" id="music-on" onclick="musicON()">
+          MUSIC ON
+        </button>
+
+        <button class="buttons d-none" id="music-off" onclick="musicOFF()">
+          MUSIC OFF
+        </button>
+      </div>
+
+      <div class="btnsStart">
+        <div id="startBTNS">
+          <button class="startGame" id="startGame" onclick="startGame()">
+            START
+          </button>
+        </div>
+      </div>
+
+      <div class="topRTbtn">
+        <div id="restartBTNS">
+          <button class="neuStart" id="neuStart" onclick="restart()">
+            RESTART
+          </button>
+        </div>
+      </div>
+
+      <div class="spielINFOall">
+        <button class="spielInfo" id="spielInfo" onclick="spielInfo()">
+          STORY
+        </button>
+        <div class="textDiv p-none" id="textDiv">
+          <div class="centerALL">
+            <div class="divText" id="divText">
+              <h3>PEPE PELIGROSO</h3>
+              <p>
+                "Collect the coins and make Pepe rich. Be careful, the small and big chickens are against you and will
+                damage you. Jump on them to defeat the chickens. Don't forget the hot sauces, you will need them later
+                for the final boss. Throw the hot sauces (hot bottles) at the final boss and you will win the game and
+                made Pepe rich."
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+
+    <!--canvas-->
+    <div class="content">
+      <canvas id="canvas" class="canvas d-none" width="720" height="480">
+
+      </canvas>
+    </div>
+
+
+    <!--screnns-->
+    <img class="startScrenns" id="startScrenns" src="img/9_intro_outro_screens/start/startscreen_1.png">
+    <img class="scrennsOver d-none" id="scrennsOver" src="img/9_intro_outro_screens/game_over/oh no you lost!.png">
+    <img class="winScrenns d-none" id="winScrenns" src="img/info-img/winn.jpg">
+
+
+    <!--mobileBTNs-->
+    <div class="mobileBTNs" id="mobileBTNs">
+      <div class="leftrightBTN" id="leftrightBTN">
+        <div class="leftBTNs">
+          <img src="img/info-img/left.png" class="button" id="left" onclick="left()">
+          <img src="img/info-img/right.png" class="button" id="right" onclick="right()">
+        </div>
+        <div class="rightBTNs">
+          <img src="img/info-img/up.png" class="button" id="up" onclick="up()">
+          <img src="img/info-img/bottle.png" class="button" id="gun" onclick="gun()">
+        </div>
+      </div>
+    </div>
+
+    
+    <!--Game Info-->
+    <div class="openInfo" onclick="openInfo()">
+      <img class="info-button" src="img/info-img/mig-info.png">
+    </div>
+
+    <div id="anleitung" class="anleitung p-none">
+      <div class="move">
+        <div class="move-left">LEFT = Move Left</div>
+        <div class="move-right">RIGHT = Move Right</div>
+      </div>
+      <div class="jump-space">
+        <div class="jump">SPACE = Jump</div>
+        <div class="space">D = Throw Bottles</div>
+      </div>
+    </div>
+
+  </div>
+
+  <!--JS-->
+  <script src="models/anleitung.class.js"></script>
+  <script src="models/drawable-object.class.js"></script>
+  <script src="models/movable-object.class.js"></script>
+  <script src="models/throwable-object.class.js"></script>
+  <script src="models/cloud.class.js"></script>
+  <script src="models/status-bar.class.js"></script>
+  <script src="models/coinBar.class.js"></script>
+  <script src="models/coin.class.js"></script>
+  <script src="models/sauceBar.class.js"></script>
+  <script src="models/bossBar.class.js"></script>
+  <script src="models/bottle.class.js"></script>
+  <script src="models/bottleRight.class.js"></script>
+  <script src="models/chicken.class.js"></script>
+  <script src="models/chickenSmall.class.js"></script>
+  <script src="models/endboss.class.js"></script>
+  <script src="models/character.class.js"></script>
+  <script src="models/background-object.class.js"></script>
+  <script src="models/keyboard.class.js"></script>
+  <script src="models/world.class.js"></script>
+  <script src="models/level.class.js"></script>
+  <script src="levels/level1.js"></script>
+  <script src="js/game.js"></script>
+</body>
+
+</html>

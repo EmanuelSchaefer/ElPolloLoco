@@ -1,0 +1,437 @@
+body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url(img/5_background/all-background.png);
+    background-position: center;
+    font-family: 'west', Arial, Helvetica, sans-serif;
+}
+
+.colum {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h2 {
+    font-size: 55px;
+    margin-top: 10px;
+}
+
+.content {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0px 0px 8px 8px rgb(255 255 255 / 52%);
+}
+
+canvas {
+    background-color: black;
+    display: block;
+}
+
+@media only screen and (max-width: 720px) {
+    canvas {
+        width: 100%;
+    }
+}
+
+@media only screen and (max-height: 480px) {
+    canvas {
+        height: 108vh;
+        width: 100vw;
+    }
+
+    h2 {
+        display: none;
+    }
+
+    .startScrenns {
+        width: 100%;
+    }
+
+    .topRTbtn {
+        display: none;
+    }
+
+    body {
+        margin: 0;
+    }
+
+    .button {
+        height: 7vh;
+        width: 4vw;
+        margin-top: -2px;
+    }
+}
+
+.anleitung {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 550px;
+    padding: 13px;
+    border-radius: 13px;
+    background-color: rgb(181 96 65 / 69%);
+    border: 3px solid rgb(0 0 0);
+}
+
+.move {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    font-size: 25px;
+    padding-left: 30px;
+}
+
+.jump-space {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    font-size: 25px;
+    padding-right: 30px;
+}
+
+.info-button {
+    height: 6.5vh;
+    object-fit: cover;
+    cursor: pointer;
+}
+
+.info-button:hover {
+    transform: scale(1.08);
+    transition: all 150ms ease-in-out;
+}
+
+.imgPlay:hover {
+    transform: scale(1.08);
+    transition: all 150ms ease-in-out;
+}
+
+.p-none {
+    display: none;
+}
+
+.d-none {
+    display: none;
+}
+
+.startScrenns {
+    height: 55.3vh;
+    width: 728px;
+}
+
+@media only screen and (max-width: 728px) {
+    .startScrenns {
+        width: 100%;
+        height: 100%;
+    }
+}
+
+.imgfullScreen {
+    height: 3.5vh;
+}
+
+.imgInfoAll {
+    height: 3.5vh;
+    width: 2vw;
+    object-fit: cover;
+}
+
+.btnsStart {
+    display: flex;
+    z-index: 300;
+    margin-bottom: -130px;
+}
+
+.fullScreen {
+    margin-left: 15px;
+}
+
+.infoAll {
+    margin-right: 15px;
+}
+
+.spaceAround {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.allBTNS {
+    margin-bottom: -130px;
+    margin-right: 80px;
+    z-index: 3000;
+}
+
+.spielINFOall {
+    margin-bottom: -130px;
+    margin-left: 80px;
+    z-index: 3000;
+}
+
+.spielInfo {
+    background-color: rgb(255 177 0);
+    border: 2px solid #422800;
+    border-radius: 30px;
+    box-shadow: #422800 3px 3px 0 0;
+    color: #422800;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 15px;
+    line-height: 35px;
+    text-align: center;
+    text-decoration: none;
+    touch-action: manipulation;
+}
+
+.spielInfo:hover {
+    background-color: #fff;
+    transform: translate(0.3px, 0.3px);
+}
+
+.spielInfo:active {
+    box-shadow: #422800 2px 2px 0 0;
+}
+
+@media (min-width: 768px) {
+    .spielInfo {
+        min-width: 120px;
+        padding: 0 25px;
+    }
+}
+
+.buttons {
+    background-color: rgb(255 177 0);
+    border: 2px solid #422800;
+    border-radius: 30px;
+    box-shadow: #422800 3px 3px 0 0;
+    color: #422800;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 15px;
+    line-height: 35px;
+    text-align: center;
+    text-decoration: none;
+    touch-action: manipulation;
+}
+
+.buttons:hover {
+    background-color: #fff;
+    transform: translate(0.3px, 0.3px);
+}
+
+.buttons:active {
+    box-shadow: #422800 2px 2px 0 0;
+}
+
+@media (min-width: 768px) {
+    .buttons {
+        min-width: 120px;
+        padding: 0 25px;
+    }
+}
+
+.startGame {
+    background-color: rgb(255 177 0);
+    border: 3px solid #422800;
+    border-radius: 30px;
+    box-shadow: #422800 3px 3px 0 0;
+    color: #422800;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 23px;
+    line-height: 45px;
+    text-align: center;
+    text-decoration: none;
+    touch-action: manipulation;
+}
+
+.startGame:hover {
+    background-color: #fff;
+    color: rgb(255 177 0);
+    transform: translate(0.3px, 0.3px);
+}
+
+.startGame:active {
+    box-shadow: #422800 2px 2px 0 0;
+}
+
+.divP {
+    z-index: 1000;
+    background-color: black;
+    color: white;
+}
+
+.divText {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    background: black;
+    color: white;
+    position: absolute;
+    border-radius: 10px;
+    margin-top: 23px;
+    margin-left: -465px;
+    z-index: 5100;
+    height: 40.8vh;
+    width: 37vw;
+    border: 3px solid white;
+    opacity: 0.93;
+    overflow: auto;
+}
+
+h3 {
+    font-size: 40px;
+}
+
+p {
+    font-size: 33px;
+    text-align: center;
+    padding-left: 80px;
+    padding-right: 80px;
+}
+
+.scrennsOver {
+    height: 52.1vh;
+    width: 37.5vw;
+    z-index: 500;
+    position: absolute;
+    padding-top: 68px;
+}
+
+@media (max-width: 1600px) {
+    .scrennsOver {
+        width: 78vh;
+    }
+}
+
+.neuStart {
+    background-color: rgb(255 177 0);
+    border: 3px solid #422800;
+    border-radius: 30px;
+    box-shadow: #422800 3px 3px 0 0;
+    color: #422800;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 23px;
+    line-height: 45px;
+    text-align: center;
+    text-decoration: none;
+    touch-action: manipulation;
+    margin-left: 75px;
+    margin-bottom: 15px;
+}
+
+.neuStart:hover {
+    background-color: #fff;
+    color: rgb(255 177 0);
+    transform: translate(0.3px, 0.3px);
+}
+
+.neuStart:active {
+    box-shadow: #422800 2px 2px 0 0;
+}
+
+.topRTbtn {
+    z-index: 3000;
+}
+
+@media screen and (min-height: 840px) {
+    @media screen and (min-width: 1200px) {
+        .mobileBTNs {
+            display: none;
+        }
+    }
+}
+
+.button {
+    height: 4vh;
+    width: 4vw;
+    border-radius: 50%;
+    background-color: white;
+    border: 3px solid rgb(255 177 0);
+    padding: 3px;
+    margin-left: 5px;
+    margin-right: 5px;
+    object-fit: cover;
+    cursor: pointer;
+}
+
+.button:hover {
+    border: 3px solid white;
+}
+
+.leftrightBTN {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 13px;
+}
+
+.leftBTNs {
+    margin-right: 450px;
+}
+
+.centerALL {
+    display: flex;
+    justify-content: center;
+    margin-left: 82px;
+}
+
+@media (max-width: 1200px) {
+    .divText {
+        width: 98%;
+    }
+}
+
+.winScrenns {
+    z-index: 5000;
+    margin-top: -481px;
+    height: 481px;
+    width: 720px;
+    opacity: 0.7;
+}
+
+@media (max-width: 900px) {
+    .openInfo {
+        display: none;
+    }
+}
+
+@media (max-width: 650px) {
+    body {
+        background-image: url("img/info-img/handy1.jpg");
+        object-fit: cover;
+    }
+
+    .colum {
+        display: none;
+    }
+}
+
+.mobileBTNs {
+    z-index: 3000;
+    margin-top: -70px;
+}
+
+.openInfo {
+    margin-top: 20px;
+}
+
+#divText::-webkit-scrollbar-track {
+    border: 1px solid rgb(255 177 0);
+	background-color: #F5F5F5;
+}
+
+#divText::-webkit-scrollbar {
+    width: 10px;
+	background-color: #F5F5F5;
+}
+
+#divText::-webkit-scrollbar-thumb {
+	background-color: rgb(255 177 0);	
+}
