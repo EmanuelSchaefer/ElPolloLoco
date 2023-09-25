@@ -102,7 +102,7 @@ class World {
             if (this.endboss.isColliding(bottle)) {
                 this.endboss.hit();
                 this.throwableObjects.splice(0, 1);
-                //    this.bossBar.percentAge(this.endboss.energy); 
+                this.bossBar.percentAge(this.endboss.energy); 
             }
         });
     }
