@@ -51,8 +51,18 @@ class Character extends MovableObjects {
         'img/2_character_pepe/4_hurt/H-42.png',
         'img/2_character_pepe/4_hurt/H-43.png'
     ];
-/*
+
     IMAGES_SLEEP = [
+        'img/2_character_pepe/1_idle/idle/I-1.png',
+        'img/2_character_pepe/1_idle/idle/I-2.png',
+        'img/2_character_pepe/1_idle/idle/I-3.png',
+        'img/2_character_pepe/1_idle/idle/I-4.png',
+        'img/2_character_pepe/1_idle/idle/I-5.png',
+        'img/2_character_pepe/1_idle/idle/I-6.png',
+        'img/2_character_pepe/1_idle/idle/I-7.png',
+        'img/2_character_pepe/1_idle/idle/I-8.png',
+        'img/2_character_pepe/1_idle/idle/I-9.png',
+        'img/2_character_pepe/1_idle/idle/I-10.png',
         'img/2_character_pepe/1_idle/long_idle/I-11.png',
         'img/2_character_pepe/1_idle/long_idle/I-12.png',
         'img/2_character_pepe/1_idle/long_idle/I-13.png',
@@ -64,13 +74,14 @@ class Character extends MovableObjects {
         'img/2_character_pepe/1_idle/long_idle/I-19.png',
         'img/2_character_pepe/1_idle/long_idle/I-20.png'
     ];
-*/
+
     constructor() {
         super().loadImage('img/2_character_pepe/2_walk/W-21.png');
         this.loadImages(this.IMAGES_WALKING);
         this.loadImages(this.IMAGES_JUMPING);
         this.loadImages(this.IMAGES_DEAD);
         this.loadImages(this.IMAGES_HURT);
+        this.loadImages(this.IMAGES_SLEEP);
         this.applyGravity();
         this.animate();
     }
@@ -116,23 +127,36 @@ class Character extends MovableObjects {
 
     characterFeeling() {
         if (this.isDead() && !this.soundPlayed) {
+            this.playAnimation(this.IMAGES_DEAD);
             this.characterDead();
         } else if (this.isHurt()) {
             this.playAnimation(this.IMAGES_HURT);
         }
         if (this.isAboveGround()) {
             this.playAnimation(this.IMAGES_JUMPING);
+        } else if (this.world.keyboard.RIGHT || this.world.keyboard.LEFT) {
+            this.playAnimation(this.IMAGES_WALKING);
         } else {
-            if (this.world.keyboard.RIGHT || this.world.keyboard.LEFT) {
-                this.playAnimation(this.IMAGES_WALKING);
-            }
+            setTimeout(() => {
+                this.isSleep();
+            }, 2000);
+        }
+    }
+
+    isSleep() {  // Ist keine Taste von den Vier gedrückt wir die Animation sleep ausgeführt.
+        let right = this.world.keyboard.RIGHT;
+        let left = this.world.keyboard.LEFT;
+        let space = this.world.keyboard.SPACE;
+        let d = this.world.keyboard.D;
+
+        if (!this.isAboveGround() && right == false && left == false && space == false && d == false) {
+            this.playAnimation(this.IMAGES_SLEEP);
         }
     }
 
     characterDead() {
         music.pause();
         this.world.keyboard = false;
-        this.playAnimation(this.IMAGES_DEAD);
         setTimeout(() => {
             this.gameOverScreen();
             this.over_sound.play();
