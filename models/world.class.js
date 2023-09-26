@@ -32,12 +32,12 @@ class World {
 
     run() {
         setInterval(() => {
+            this.pushBottle();
             this.checkCollisions();
             this.coinsCollisions();
             this.bottlesCollisions();
             this.endbossCollisionsBottle();
             this.endbossHitCharacter();
-            this.pushBottle();
         }, 200);
     }
 
@@ -64,7 +64,7 @@ class World {
                 enemy.hitChicken();
                 setTimeout(() => {
                     this.level.enemies.splice(i, 1);
-                }, 500)                                            // nicht über dem Boden
+                }, 300)                                            // nicht über dem Boden
             } else if (this.character.isColliding(enemy) && !this.character.isAboveGround() && this.character.energy > 0 && enemy.energy > 0) {
                 this.characterHIT();
             }
@@ -102,7 +102,7 @@ class World {
             if (this.endboss.isColliding(bottle)) {
                 this.endboss.hit();
                 this.throwableObjects.splice(0, 1);
-                this.bossBar.percentAge(this.endboss.energy); 
+                this.bossBar.percentAge(this.endboss.energy);
             }
         });
     }
@@ -156,6 +156,7 @@ class World {
         if (mo.otherDiretion) {
             this.flipImage(mo);
         }
+
         mo.draw(this.ctx);
         mo.drawFrame(this.ctx);
 

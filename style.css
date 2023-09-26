@@ -77,6 +77,7 @@ canvas {
     border-radius: 13px;
     background-color: rgb(181 96 65 / 69%);
     border: 3px solid rgb(0 0 0);
+    margin-top: 13px;
 }
 
 .move {
@@ -121,6 +122,7 @@ canvas {
 
 .startScrenns {
     width: 728px;
+    box-shadow: 0px 0px 8px 8px rgb(255 255 255 / 52%);
 }
 
 @media only screen and (max-width: 728px) {
@@ -143,7 +145,7 @@ canvas {
 .btnsStart {
     display: flex;
     z-index: 300;
-    margin-bottom: -130px;
+    margin-bottom: -100px;
 }
 
 .fullScreen {
@@ -161,13 +163,13 @@ canvas {
 }
 
 .allBTNS {
-    margin-bottom: -130px;
+    margin-bottom: -45px;
     margin-right: 80px;
     z-index: 3000;
 }
 
 .spielINFOall {
-    margin-bottom: -130px;
+    margin-bottom: -45px;
     margin-left: 80px;
     z-index: 3000;
 }
@@ -273,7 +275,7 @@ canvas {
     color: white;
     position: absolute;
     border-radius: 10px;
-    margin-top: 23px;
+    margin-top: 50px;
     margin-left: -465px;
     z-index: 5100;
     height: 31.8vh;
@@ -347,6 +349,12 @@ p {
     }
 }
 
+@media (max-width: 870px) {
+    .anleitung {
+        display: none;
+    }
+}
+
 .button {
     height: 4vh;
     width: 4vw;
@@ -395,12 +403,6 @@ p {
     opacity: 0.7;
 }
 
-@media (max-width: 900px) {
-    .openInfo {
-        display: none;
-    }
-}
-
 @media (max-width: 650px) {
     body {
         background-image: url("img/info-img/handy1.jpg");
@@ -417,20 +419,40 @@ p {
     margin-top: -70px;
 }
 
-.openInfo {
-    margin-top: 10px;
-}
-
 #divText::-webkit-scrollbar-track {
     border: 1px solid rgb(255 177 0);
-	background-color: #F5F5F5;
+    background-color: #F5F5F5;
 }
 
 #divText::-webkit-scrollbar {
     width: 10px;
-	background-color: #F5F5F5;
+    background-color: #F5F5F5;
 }
 
 #divText::-webkit-scrollbar-thumb {
-	background-color: rgb(255 177 0);	
+    background-color: rgb(255 177 0);
+}
+
+@media (max-width: 840px) {
+    .allBTNS {
+        margin-bottom: -85px;
+    }
+
+    .spielINFOall {
+        margin-bottom: -85px;
+    }
+
+    .divText {
+        height: 71.8vh;
+    }
+
+    .button {
+        height: 7vh;
+        margin-top: -14px;
+    }
+
+    .scrennsOver {
+        width: 100%;
+        object-fit: cover;
+    }
 }
