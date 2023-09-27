@@ -6,10 +6,6 @@ class DrawableObject {
     y = 280;
     height = 150;
     width = 100;
-    top = 10;
-    bottom = 10;
-    left = 20;
-    right = 20;
 
     loadImage(path) {
         this.img = new Image();

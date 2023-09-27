@@ -171,6 +171,7 @@ function gun() {
 // music
 function musicON() {
   if (!music.playd) {
+    music.volume = 0.7;
     music.play();
     document.getElementById('music-on').classList.add('d-none');
     document.getElementById('music-off').classList.remove('d-none');

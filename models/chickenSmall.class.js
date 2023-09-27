@@ -5,10 +5,10 @@ class ChickenSmall extends Chicken {
     width = 55;
     speed = 100;
     offset = {
-        x: 10,
-        y: 10,
-        width: 10,
-        height: 10 
+        x: 15,
+        y: 15,
+        width: 15,
+        height: 15 
     };
 
     IMAGES_WALKING = [
