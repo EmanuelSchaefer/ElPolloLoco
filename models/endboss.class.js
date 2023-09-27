@@ -77,6 +77,9 @@ class Endboss extends MovableObjects {
         setTimeout(() => {
             document.getElementById('winScrenns').classList.remove('d-none');
             this.win_sound.play();
+            setTimeout(() => {
+                location.reload();
+            }, 2800);
             // nach dem sound reload; das gleiche dan auch bei gamo over.
         }, 500);
     }

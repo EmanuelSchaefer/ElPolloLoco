@@ -160,6 +160,9 @@ class Character extends MovableObjects {
         setTimeout(() => {
             this.gameOverScreen();
             this.over_sound.play();
+            setTimeout(() => {
+                location.reload();
+            }, 3000);
         }, 1000);
         this.soundPlayed = true;
     }
