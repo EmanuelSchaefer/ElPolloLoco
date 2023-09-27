@@ -64,7 +64,7 @@ class World {
                 enemy.hitChicken();
                 setTimeout(() => {
                     this.level.enemies.splice(i, 1);
-                }, 300)                                            // nicht über dem Boden
+                }, 70);                                            // nicht über dem Boden
             } else if (this.character.isColliding(enemy) && !this.character.isAboveGround() && this.character.energy > 0 && enemy.energy > 0) {
                 this.characterHIT();
             }

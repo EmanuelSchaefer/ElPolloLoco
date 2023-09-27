@@ -113,6 +113,10 @@ class Character extends MovableObjects {
         this.world.camera_x = -this.x + 100;
     }
 
+    jump() {
+        this.speedY = 30;
+    }
+
     moveRight() {
         super.moveRight();
         this.otherDiretion = false;
