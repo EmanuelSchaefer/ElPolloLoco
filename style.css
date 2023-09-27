@@ -449,6 +449,7 @@ p {
     .button {
         height: 7vh;
         margin-top: -14px;
+        object-fit: contain;
     }
 
     .scrennsOver {

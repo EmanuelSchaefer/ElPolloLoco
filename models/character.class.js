@@ -6,7 +6,7 @@ class Character extends MovableObjects {
     world;
     offset = {
         x: 25,
-        y: 94,
+        y: 80,
         width: 30,
         height: 5
     };
