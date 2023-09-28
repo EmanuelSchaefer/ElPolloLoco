@@ -1,6 +1,6 @@
 class BottleRight extends Bottle {
     y = 365;
-    x = 200;
+    x = 160;
     height = 73;
     width = 73;
 
