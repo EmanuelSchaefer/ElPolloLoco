@@ -1,3 +1,6 @@
+/**
+ * Represents a coin bar visible on the screen.
+ */
 class CoinBar extends DrawableObject {
 
     IMAGEScoin = [
@@ -9,8 +12,15 @@ class CoinBar extends DrawableObject {
         'img/7_statusbars/1_statusbar/1_statusbar_coin/blue/100.png'
     ];
 
+     /**
+    * The current starting percentage of the coin bar.
+    * @type {number}
+    */
     percentage = 0;
 
+    /**
+    * Constructs a new CoinBar object.
+    */
     constructor() {
         super();
         this.loadImages(this.IMAGEScoin);
@@ -21,12 +31,19 @@ class CoinBar extends DrawableObject {
         this.height = 60;
     }
 
+    /**
+     * Sets the percentage value of the coin bar and updates the displayed image accordingly.
+     * @param {number} percentage - The new percentage value 0 to 100.
+     */
     percentAge(percentage) {
         this.percentage = percentage;
         let path = this.IMAGEScoin[this.resolveImageIndex()];
         this.img = this.imageCache[path];
     }
 
+     /**
+    * @returns {number} The index of the current image in the IMAGES array.
+    */
     resolveImageIndex() {
         if (this.percentage >= 0 && this.percentage < 20) {
             this.coin = this.percentage;

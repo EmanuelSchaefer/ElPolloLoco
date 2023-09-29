@@ -1,3 +1,6 @@
+/**
+ * Represents a boss health bar visible on the screen.
+ */
 class BossBar extends DrawableObject {
 
     IMAGES_Boss = [
@@ -9,8 +12,15 @@ class BossBar extends DrawableObject {
         'img/7_statusbars/1_statusbar/2_statusbar_health/blue/100.png'
     ];
 
+    /**
+    * The current starting percentage of the boss health bar.
+    * @type {number}
+    */
     percentage = 100;
 
+    /**
+     * Loads the images and creates a new instance for the BossBar.
+     */
     constructor() {
         super();
         this.loadImages(this.IMAGES_Boss);
@@ -21,12 +31,19 @@ class BossBar extends DrawableObject {
         this.percentAge(100);
     }
 
+    /**
+     * Sets the percentage value of the boss health bar and updates the displayed image accordingly.
+     * @param {number} percentage - The new percentage value 0 to 100.
+     */
     percentAge(percentage) {
         this.percentage = percentage;
         let path = this.IMAGES_Boss[this.resolveImageIndex()];
         this.img = this.imageCache[path];
     }
 
+    /**
+     * @returns {number} The index of the current image in the IMAGES array.
+     */
     resolveImageIndex() {
         if (this.percentage == 100) {
             return 5;

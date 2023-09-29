@@ -1,3 +1,6 @@
+/**
+ * Represents a sauce bar visible on the screen.
+ */
 class SauceBar extends DrawableObject {
 
     IMAGESsauce = [
@@ -9,8 +12,15 @@ class SauceBar extends DrawableObject {
         'img/7_statusbars/1_statusbar/3_statusbar_bottle/orange/100.png'
     ];
 
+    /**
+    * The current starting percentage of the sauce bar.
+    * @type {number}
+    */
     percentage = 0;
 
+    /**
+     * Loads the images and creates a new instance for the sauceBar.
+     */
     constructor() {
         super();
         this.loadImages(this.IMAGESsauce);
@@ -21,12 +31,19 @@ class SauceBar extends DrawableObject {
         this.setPERCENTage(0);
     }
 
+    /**
+     * Sets the percentage value of the sauce bar and updates the displayed image accordingly.
+     * @param {number} percentage - The new percentage value 0 to 100.
+     */
     setPERCENTage(percentage) {
         this.percentage = percentage;
         let path = this.IMAGESsauce[this.resolveImageIndex()];
         this.img = this.imageCache[path];
     }
 
+    /**
+     * @returns {number} The index of the current image in the IMAGES array.
+     */
     resolveImageIndex() {
         if (this.percentage >= 0 && this.percentage < 20) {
             this.bottle = this.percentage;

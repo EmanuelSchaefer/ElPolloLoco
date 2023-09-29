@@ -1,3 +1,6 @@
+/**
+ * Background objects extend the MovableObject class.
+ */
 class BackgroundObject extends MovableObjects {
     width = 720;
     height = 480;

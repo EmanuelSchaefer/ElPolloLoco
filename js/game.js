@@ -1,8 +1,27 @@
+/**
+ * Represents the canvas element on which the game is rendered.
+ * @type {HTMLCanvasElement}
+ */
 let canvas;
+/**
+  * Represents the game world.
+  * @type {World}
+  */
 let world;
+/**
+  * Provides an object to keep track of the keyboard state.
+  * @type {Keyboard}
+  */
 let keyboard = new Keyboard();
+/**
+  * Variable for the background music.
+  * @type {boolean}
+  */
 let music = new Audio('audio/western-background-music-146726.mp3');
 
+/**
+ * The init function loads the page and displays the start screen.
+ */
 function init() {
   canvas = document.getElementById('canvas');
   document.getElementById('startScrenns').classList.remove('d-none');
@@ -15,8 +34,10 @@ function init() {
   document.getElementById('mobileBTNs').classList.add('d-none');
 }
 
+/**
+ * The StartGame function starts the game.
+ */
 function startGame() {
-  //    init();
   initLevel();
   world = new World(canvas, keyboard);
   document.getElementById('startScrenns').classList.add('d-none');
@@ -31,11 +52,16 @@ function startGame() {
   stopMobileButtonTouch();
 }
 
+/**
+ * Reload.
+ */
 function restart() {
   location.reload();
 }
 
-
+/**
+ * Tests whether the key is pressed or not for the keyboard.
+ */
 window.addEventListener("keydown", (e) => {
   if (e.keyCode == 39) {
     keyboard.RIGHT = true;
@@ -88,6 +114,9 @@ window.addEventListener("keyup", (e) => {
   }
 });
 
+/**
+ * Tests whether the button is pressed or not for the cell phone.
+ */
 function startMobileButtonTouch() {
   document.getElementById("left").addEventListener("touchstart", (event) => {
     keyboard.LEFT = true;
@@ -167,8 +196,9 @@ function gun() {
   });
 }
 
-
-// music
+/**
+ * Music on playd.
+ */
 function musicON() {
   if (!music.playd) {
     music.volume = 0.7;
@@ -178,6 +208,9 @@ function musicON() {
   }
 }
 
+/**
+ * Music off pausd.
+ */
 function musicOFF() {
   if (!music.pausd) {
     music.pause();

@@ -1,3 +1,4 @@
+// The same principle as with the large chickens, just different size and different pictures.
 class ChickenSmall extends Chicken {
     y = 375;
     x = 700;
