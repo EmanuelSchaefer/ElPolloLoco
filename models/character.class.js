@@ -24,10 +24,10 @@ class Character extends MovableObjects {
    * @type {number}
    */
     speed = 3;
-     /**
-    * Represents the game world.
-    * @type {World}
-    */
+    /**
+   * Represents the game world.
+   * @type {World}
+   */
     world;
     offset = {
         x: 25,
@@ -36,18 +36,18 @@ class Character extends MovableObjects {
         height: 5
     };
 
-     /**
-    * The audio sounds for the character.
-    * @type {HTMLAudioElement}
-    */
+    /**
+   * The audio sounds for the character.
+   * @type {HTMLAudioElement}
+   */
     walking_sound = new Audio('audio/laufen.mp3');
     jump_sound = new Audio('audio/jumpen.mp3');
     over_sound = new Audio('audio/gameOver.mp3');
 
-     /**
-    * A series of image paths representing the various images of the running character.
-    * @type {string[]}
-    */
+    /**
+   * A series of image paths representing the various images of the running character.
+   * @type {string[]}
+   */
     IMAGES_WALKING = [
         'img/2_character_pepe/2_walk/W-21.png',
         'img/2_character_pepe/2_walk/W-22.png',
@@ -57,10 +57,10 @@ class Character extends MovableObjects {
         'img/2_character_pepe/2_walk/W-26.png'
     ];
 
-     /**
-    * A series of image paths representing the various images of the jumping character.
-    * @type {string[]}
-    */
+    /**
+   * A series of image paths representing the various images of the jumping character.
+   * @type {string[]}
+   */
     IMAGES_JUMPING = [
         'img/2_character_pepe/3_jump/J-31.png',
         'img/2_character_pepe/3_jump/J-32.png',
@@ -73,10 +73,10 @@ class Character extends MovableObjects {
         'img/2_character_pepe/3_jump/J-39.png'
     ];
 
-     /**
-    * A series of image paths representing the character's various dying images.
-    * @type {string[]}
-    */
+    /**
+   * A series of image paths representing the character's various dying images.
+   * @type {string[]}
+   */
     IMAGES_DEAD = [
         'img/2_character_pepe/5_dead/D-51.png',
         'img/2_character_pepe/5_dead/D-52.png',
@@ -87,20 +87,20 @@ class Character extends MovableObjects {
         'img/2_character_pepe/5_dead/D-57.png'
     ];
 
-     /**
-    * A series of image paths representing the various images of the final character.
-    * @type {string[]}
-    */ 
+    /**
+   * A series of image paths representing the various images of the final character.
+   * @type {string[]}
+   */
     IMAGES_HURT = [
         'img/2_character_pepe/4_hurt/H-41.png',
         'img/2_character_pepe/4_hurt/H-42.png',
         'img/2_character_pepe/4_hurt/H-43.png'
     ];
 
-     /**
-    * A series of image paths representing the various images of the Sleeping character.
-    * @type {string[]}
-    */
+    /**
+   * A series of image paths representing the various images of the Sleeping character.
+   * @type {string[]}
+   */
     IMAGES_SLEEP = [
         'img/2_character_pepe/1_idle/idle/I-1.png',
         'img/2_character_pepe/1_idle/idle/I-2.png',
@@ -124,9 +124,9 @@ class Character extends MovableObjects {
         'img/2_character_pepe/1_idle/long_idle/I-20.png'
     ];
 
-     /**
-    * Constructs a new Character object.
-    */
+    /**
+   * Constructs a new Character object.
+   */
     constructor() {
         super().loadImage('img/2_character_pepe/2_walk/W-21.png');
         this.loadImages(this.IMAGES_WALKING);
@@ -138,10 +138,10 @@ class Character extends MovableObjects {
         this.animate();
     }
 
-    
-     /**
-    * Animate the character through movement and emotion.
-    */
+
+    /**
+   * Animate the character through movement and emotion.
+   */
     animate() {
         setInterval(() => {
             this.moveCharacter();
@@ -233,7 +233,7 @@ class Character extends MovableObjects {
             this.gameOverScreen();
             this.over_sound.play();
             setTimeout(() => {
-         //       location.reload();
+                location.reload();
             }, 3000);
         }, 1000);
         this.soundPlayed = true;
