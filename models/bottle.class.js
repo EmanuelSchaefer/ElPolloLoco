@@ -12,7 +12,7 @@ class Bottle extends MovableObjects {
      * The x coordinates value of the bottle.
      * @type {number}
      */
-    x = 160;
+    x = 130;
     /**
     * The height of the bottle.
     * @type {number}

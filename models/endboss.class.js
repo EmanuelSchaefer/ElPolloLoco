@@ -127,7 +127,7 @@ class Endboss extends MovableObjects {
             document.getElementById('winScrenns').classList.remove('d-none');
             this.win_sound.play();
             setTimeout(() => {
-                location.reload();
+          //      location.reload();
             }, 2800);
         }, 500);
     }

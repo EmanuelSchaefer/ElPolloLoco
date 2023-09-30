@@ -10,7 +10,7 @@ class BottleRight extends Bottle {
     /**
      * The x coordinates value of the bottleRight.
      */
-    x = 160;
+    x = 130;
     /**
     * The height of the bottleRight.
     * @type {number}
