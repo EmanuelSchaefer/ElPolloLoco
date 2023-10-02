@@ -1,6 +1,8 @@
 body {
     margin: 0;
     height: 100vh;
+    background-repeat: no-repeat;
+    background-size: cover;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -18,6 +20,7 @@ body {
 h2 {
     font-size: 55px;
     margin-top: 10px;
+    margin-bottom: 15px;
 }
 
 .content {
@@ -41,8 +44,9 @@ canvas {
 
 @media only screen and (max-height: 480px) {
     canvas {
-        height: 108vh;
-        width: 100vw;
+        height: 357px;
+        width: 684px;
+        margin-top: -2px;
     }
 
     h2 {
@@ -65,6 +69,10 @@ canvas {
         height: 7vh;
         width: 4vw;
         margin-top: -2px;
+    }
+
+    .mobileBTNs {
+        margin-top: -45px;
     }
 }
 
@@ -202,6 +210,12 @@ canvas {
     .spielInfo {
         min-width: 120px;
         padding: 0 25px;
+    }
+}
+
+@media only screen and (max-height: 480px) {
+    .startScrenns {
+        width: 630px;
     }
 }
 
@@ -403,7 +417,7 @@ p {
     opacity: 0.7;
 }
 
-@media (max-width: 727px) {
+@media (max-width: 811px) {
     body {
         background-image: url("img/info-img/handy1.jpg");
         object-fit: cover;
@@ -433,7 +447,7 @@ p {
     background-color: rgb(255 177 0);
 }
 
-@media (max-width: 840px) {
+@media (max-width: 812px) {
     .allBTNS {
         margin-bottom: -85px;
     }
@@ -448,12 +462,26 @@ p {
 
     .button {
         height: 7vh;
-        margin-top: -14px;
+        margin-top: 15px;
         object-fit: contain;
     }
 
     .scrennsOver {
         width: 100%;
+        height: 95%;
+        margin-top: -70px;
         object-fit: cover;
+    }
+
+    .winScrenns {
+        z-index: 5000;
+        margin-top: -357px;
+        height: 357px;
+        width: 684px;
+        opacity: 0.7;
+    }
+
+    .content {
+        box-shadow: none;
     }
 }
