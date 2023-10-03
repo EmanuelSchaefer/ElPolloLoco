@@ -45,7 +45,7 @@ canvas {
 @media only screen and (max-height: 480px) {
     canvas {
         height: 357px;
-        width: 684px;
+        width: 652px;
         margin-top: -2px;
     }
 
@@ -219,6 +219,12 @@ canvas {
     }
 }
 
+@media (max-width: 896px) {
+    .canvas {
+        width: 655px;
+    }
+}
+
 .buttons {
     background-color: rgb(255 177 0);
     border: 2px solid #422800;
@@ -324,6 +330,34 @@ p {
     }
 }
 
+@media (max-width: 768px) {
+    .divText {
+        margin-left: -426px;
+    }
+}
+
+@media (max-width: 580px) {
+    .divText {
+        margin-left: -423px;
+    }
+}
+
+@media (max-height: 368px) {
+    .startScrenns {
+        width: 541px;
+    }
+
+    .canvas {
+        height: 303px;
+    }
+}
+
+@media (max-height: 700px) {
+    .neuStart {
+        display: none;
+    }
+}
+
 .neuStart {
     background-color: rgb(255 177 0);
     border: 3px solid #422800;
@@ -378,7 +412,6 @@ p {
     padding: 3px;
     margin-left: 5px;
     margin-right: 5px;
-    object-fit: cover;
     cursor: pointer;
 }
 
@@ -417,13 +450,25 @@ p {
     opacity: 0.7;
 }
 
-@media (max-width: 811px) {
+@media (max-width: 500px) {
     body {
         background-image: url("img/info-img/handy1.jpg");
         object-fit: cover;
     }
 
     .colum {
+        display: none;
+    }
+}
+
+@media (max-height: 600px) {
+    .anleitung {
+        display: none;
+    }
+}
+
+@media (max-height: 500px) {
+    h2 {
         display: none;
     }
 }
@@ -457,20 +502,12 @@ p {
     }
 
     .divText {
-        height: 71.8vh;
+        height: 63vh;
     }
 
     .button {
         height: 7vh;
         margin-top: 15px;
-        object-fit: contain;
-    }
-
-    .scrennsOver {
-        width: 100%;
-        height: 95%;
-        margin-top: -70px;
-        object-fit: cover;
     }
 
     .winScrenns {
